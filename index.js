@@ -12,9 +12,9 @@ async function main() {
     },
     method: 'POST'
   };
-  //let releaseId = github.event.release.id;
+  let releaseId = github.event.release.id;
   try {
-    let response = await fetch(endpoint, { ...defaultOptions });
+    let response = await fetch(endpoint, { ...defaultOptions, body: releaseId });
     //let json = await response.json();
     //console.log(`The notification response: ${json}`);
     console.log(await response.text())
