@@ -13,6 +13,7 @@ async function main() {
     method: 'POST'
   };
   //let releaseId = github.event.release.id;
+  console.log(github.context)
   try {
     let response = await fetch(endpoint, { ...defaultOptions });
     //let json = await response.json();
