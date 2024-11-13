@@ -13,8 +13,9 @@ async function main() {
     method: 'POST'
   };
   //let releaseId = github.event.release.id;
+  console.log(github.context)
   try {
-    let response = await fetch(endpoint, { ...defaultOptions });
+    let response = await fetch(endpoint, { ...defaultOptions, body: { release: github.context.payload.release } });
     //let json = await response.json();
     //console.log(`The notification response: ${json}`);
     console.log(await response.text())
