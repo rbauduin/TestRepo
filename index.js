@@ -15,9 +15,13 @@ async function main() {
   //let releaseId = github.event.release.id;
   console.log(github.context)
   try {
-    let response = await fetch(endpoint, { ...defaultOptions, body: JSON.stringify({ release: github.context.payload.release }) });
+    let body = JSON.stringify({ release: github.context.payload.release })
+    let response = await fetch(endpoint, { ...defaultOptions, body: body });
     //let json = await response.json();
     //console.log(`The notification response: ${json}`);
+    console.log("body:")
+    console.log(body)
+    console.log("response text:")
     console.log(await response.text())
   } catch (error) {
     core.setFailed(error.message);
