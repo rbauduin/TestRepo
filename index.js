@@ -15,7 +15,7 @@ async function main() {
   //let releaseId = github.event.release.id;
   console.log(github.context)
   try {
-    let body = JSON.stringify({ release: github.context.payload.release })
+    let body = JSON.stringify({ release: github.context.payload.release, repository: github.context.payload.repository })
     let response = await fetch(endpoint, { ...defaultOptions, body: body });
     //let json = await response.json();
     //console.log(`The notification response: ${json}`);
