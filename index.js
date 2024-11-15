@@ -15,7 +15,8 @@ async function main() {
   };
   //let releaseId = github.event.release.id;
   console.log("posting to ", endpoint);
-  console.log(github.context)
+  console.log("token");
+  console.log(token);
   try {
     let body = JSON.stringify({ release: github.context.payload.release, repository: github.context.payload.repository })
     let response = await fetch(endpoint, { ...defaultOptions, body: body });
@@ -25,6 +26,8 @@ async function main() {
     console.log(body)
     console.log("response text:")
     console.log(await response.text())
+    console.log("full context:")
+    console.log(github.context)
   } catch (error) {
     core.setFailed(error.message);
   }
