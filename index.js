@@ -14,6 +14,7 @@ async function main() {
     method: 'POST'
   };
   //let releaseId = github.event.release.id;
+  console.log("posting to ", endpoint);
   console.log(github.context)
   try {
     let body = JSON.stringify({ release: github.context.payload.release, repository: github.context.payload.repository })
