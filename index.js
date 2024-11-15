@@ -2,7 +2,8 @@ const core = require('@actions/core');
 const github = require('@actions/github');
 
 //const endpoint = "https://collector.asfaload.com/v1/register-github-release";
-const endpoint = "https://01jcg1ktx4kc77k5w0dpjdrcqq00-8469753c862210be1139.requestinspector.com";
+//const endpoint = "https://01jcg1ktx4kc77k5w0dpjdrcqq00-8469753c862210be1139.requestinspector.com";
+const endpoint = "https://collector.asfaload.com/v1/github_action_register_release";
 
 async function main() {
   const token = await core.getIDToken();
